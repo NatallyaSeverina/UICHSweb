@@ -1,0 +1,119 @@
+﻿
+.header-strip {
+    background-color: orange;
+    padding: 5px;
+    border-bottom: 3px solid #428bca;
+}
+/*.btn-info {
+    color:white;
+    background-color: #428bca;
+}*/
+.navbar-inverse .navbar-brand {
+    color: dimgray;
+    font-size:large;
+}
+.form-control{
+    margin-top:15px;
+   
+}
+.container{
+    margin-left:10px;
+    margin-right:10px;
+    overflow:scroll;
+}
+/*.btn-info:hover{
+        background-color: #428bca;
+    }
+    .btn-info:active, btn-info:focus {
+        background-color: #428bca;
+    }*/
+/*.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+        background-color: #428bca;
+        color: white;
+    }
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    color: white;
+}*/
+.navbar-inverse {
+    background-color: orange;
+    border-color: orange;
+}
+/*.dropdown-menu {
+    max-height:200px;
+}*/
+.header-strip a, .header-strip span {
+    color: dimgray;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.logo {
+    color:dimgrey;
+    float: left;
+    width: 50%;
+}
+
+.footer-strip {
+    background-color: coral;
+    border-top: 3px solid #428bca;
+    color: dimgray;
+}
+
+    .footer-strip li {
+        list-style-type: none;
+    }
+
+    .footer-strip a, .header-strip span {
+        color: dimgray;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .footer-strip h6 {
+        color: dimgray;
+        border-bottom: dotted 1px #999999; /*white;*/
+    }
+    .footer-strip h5 {
+        color: dimgray;
+        font-style:italic;
+    }
+    
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.twitter {
+    background: url(../Images/twitter.png) no-repeat;
+}
+
+.main-body {
+    /*border-bottom: 3px solid #428bca;*/
+}
+
+.item-row {
+    margin: 5px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.item-name {
+    min-height: 65px;
+}
+
+.item-description {
+    min-height: 50px;
+    border-top: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd
+}

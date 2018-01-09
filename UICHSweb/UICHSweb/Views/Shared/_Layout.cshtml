@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/SiteStyles.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!—Заголовок страницы-->
+    <div class="header-strip">
+        <!--Панель аутентификации-->
+        <div class="container">
+            @Html.Action("UserInfo","Menu")
+            @*<div class="nav navbar-right">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Войти
+                </a>
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Зарегистрироваться
+                </a>
+            </div>*@
+        </div>
+        <!--Конец Панель аутентификации-->
+        <!--Панель навигации-->
+        <div class="container">
+            <div class="navbar navbar-inverse" role="navigation">
+                <div class="logo">
+                    <a class="navbar-brand" href="#">УИЧС</a>
+                </div>
+                @Html.Action("Main", "Menu", new { c = Request.RequestContext.RouteData.Values["controller"] })
+                @*<ul class="nav nav-pills">
+                    <li>@Html.ActionLink("Домой", "Index", "Home")</li>
+                    <li class="active">@Html.ActionLink("Информация о ЧС","List","EmergencySituations")</li>
+                    <li>@Html.ActionLink("Карта", "Index", "Map")</li>
+                    <li>@Html.ActionLink("Статистика", "Index", "Statistic")</li>
+                </ul>*@
+            </div>
+        </div>
+        <!--Конец Панель навигации-->
+    </div>
+    <!--Содержимое сайта-->
+    <div class="main-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3">
+                  @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+                  {
+                      @Html.TextBox("dateOfDuty",@DateTime.Now.ToShortDateString(),new { @class="form-control",placeholder="Введите дату"})
+                  }
+                </div>
+            </div>
+            <div class="row">
+               
+                боковая панель
+               <div class="col-md-2 col-lg-2">
+                   @RenderSection("SidePanel", required: false)
+                   @*
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="form-group">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><span class="glyphicon glyphicon-chevron-down"></span>Пожары</li>
+                                <li>@Html.CheckBox("cb1", (Request.Form["cb1"] ?? string.Empty).Contains("true"))Пожары в частных домах</li>
+                                <li>@Html.CheckBox("cb2", (Request.Form["cb2"] ?? string.Empty).Contains("true")) Пожары в gfhgf</li>
+                                <li>@Html.CheckBox("cb3", (Request.Form["cb3"] ?? string.Empty).Contains("true")) Пожары в dfsfsfs</li>
+                            </ul>
+                        </div>
+                         <div class="form-group">
+                            <div class=" col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                                <input type="submit" class="btn btn-default" value="Отправить" />
+                            </div>
+                        </div>
+                    }*@
+                </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <div class="container-fluid">
+                        @RenderBody()
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Подвал сайта-->
+
+    <div class="footer-strip navbar-fixed-bottom row-fluid">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.Action("Map","Menu")
+                    @*<h6>Карта сайта</h6>
+                    <ul>
+                        <li>@Html.ActionLink("Домой", "Index", "Home")</li>
+                        <li class="active">@Html.ActionLink("Информация о ЧС", "List", "EmergencySituations")</li>
+                        <li>@Html.ActionLink("Карта", "Index", "Map")</li>
+                        <li>@Html.ActionLink("Статистика", "Index", "Statistic")</li>
+                    </ul>*@
+                </div>
+                <div class="col-md-3 col-md-offset-6">
+                    <h5>
+                        РЦУРЧС МЧС Республики Беларусь<br />
+                        220004, г. Минск, ул. Иерусалимская, 4<br />
+                        телефоны (круглосуточно)<br />
+                        (+375 17) 209 27 01<br />
+                        (+375 17) 209 27 08
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>

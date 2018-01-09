@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Model.EmergrncySituationVMList>
+
+<p>
+    @Html.ActionLink("Добавить ЧС", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfEmergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Perished)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PerishedChildren)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Neighborhood)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PopylatedLocality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kind)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionOfEmergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToRegistration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToReport)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfEmergency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Perished)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerishedChildren)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Neighborhood)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PopylatedLocality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kind)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistrationTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionOfEmergency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToRegistration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToReport)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new {  id=item.EmergencyId },new { @class="btn"}) |
+            @Html.ActionLink("Просмотреть", "Details", new { id = item.EmergencyId }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.EmergencyId })
+        </td>
+    </tr>
+}
+
+</table>
